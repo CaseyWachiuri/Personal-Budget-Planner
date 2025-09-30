@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>BUDGET | PLANNER</title>
+	<link rel="stylesheet" href="../css/budget.css">
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+	<div class="container">
+		<header>
+			<h1>BUDGET PLANNER</h1>
+			<p>TRACK EXPENSES • SAVINGS</p>
+			<div id="income-display"></div>
+		</header>
+		<div class="row">
+			<!-- Expense Section -->
+			<div>
+				<div class="card">
+					<div class="card-header">
+						<h3>ADD EXPENSE</h3>
+					</div>
+					<div>
+						<form id="expense-form">
+							<div class="div-spacing">
+								<label for="expense-amount" class="form-label">Amount</label>
+								<input type="number" class="form-control" id="expense-amount" required>
+							</div>
+							<div class="div-spacing">
+								<label for="expense-category" class="form-label">Category</label>
+								<select class="form-select" id="expense-category" required>
+									<option value="housing">Housing</option>
+									<option value="food">Food</option>
+									<option value="transportation">Transportation</option>
+									<option value="entertainment">Entertainment</option>
+									<!-- Use this value to experiment with adding values using the add-category-btn -->
+									<!-- <option value="utilities">Utilities</option> -->
+									<option value="other">Other</option>
+								</select>
+							</div>
+							<div class="div-spacing">
+								<label for="expense-date" class="form-label">Date</label>
+								<input type="date" class="form-control" id="expense-date" required>
+							</div>
+							<button type="submit" class="btn btn-danger">Add Expense</button>
+							<button type="button" class="btn btn-info" id="add-category-btn">+</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Budget Summary -->
+		<div class="card">
+			<div class="card-header">
+				<h3>BUDGET SUMMARY</h3>
+			</div>
+			<div class="budget-summary">
+				<div class="row text-center">
+					<div>
+						<h5>Total Income</h5>
+						<p id="total-income" class="budget-text">Kshs 0.00</p>
+					</div>
+					<div>
+						<h5>Total Expenses</h5>
+						<p id="total-expense" class="budget-text">Kshs 0.00</p>
+					</div>
+					<div>
+						<h5>Balance</h5>
+						<p id="balance" class="budget-text">Kshs 0.00</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Analytics Section -->
+		<div class="row">
+			<div>
+				<div class="card">
+					<div class="card-header">
+						<h3>MONTHLY TRENDS</h3>
+					</div>
+					<div>
+						<canvas id="monthly-trends-chart"></canvas>
+					</div>
+				</div>
+			</div>
+			<div>
+				<div class="card">
+					<div class="card-header">
+						<h3>INCOME VS EXPENSES</h3>
+					</div>
+					<div>
+						<canvas id="income-expense-chart"></canvas>
+					</div>
+				</div>
+			</div>
+			<div>
+				<div class="card">
+					<div class="card-header">
+						<h3>SPENDING BREAKDOWN</h3>
+					</div>
+					<div>
+						<canvas id="expense-category-chart"></canvas>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Transaction History -->
+		<div class="card">
+			<div class="card-header">
+				<h3>TRANSACTION HISTORY</h3>
+			</div>
+			<div>
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>Date</th>
+							<th>Type</th>
+							<th>Category</th>
+							<th>Amount</th>
+						</tr>
+					</thead>
+					<tbody id="transaction-history">
+						<!-- Transactions will be added here -->
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
+	<script src="../scripts/budget.js" defer></script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>SET INCOME | BUDGET PLANNER</title>
+	<link rel="stylesheet" href="../css/index.css">
+</head>
+
+<body>
+	<div class="income-container">
+		<h1>SET MONTHLY BUDGET</h1>
+		<form id="income-setup-form">
+			<div class="form-group">
+				<label for="monthly-income">MONTHLY INCOME</label>
+				<input type="number" id="monthly-income" placeholder="Kshs 0.00" required>
+			</div>
+			<div class="form-group">
+				<label for="budget-goal">MONTHLY SAVINGS GOAL</label>
+				<input type="number" id="budget-goal" placeholder="Kshs 0.00" required>
+			</div>
+
+			<div class="form-group">
+				<label for="start-month">START MONTH</label>
+				<input type="date" id="start-month" default-value="" required>
+			</div>
+
+			<div class="form-group">
+				<label for="end-month">END MONTH</label>
+				<input type="date" id="end-month" required>
+			</div>
+
+			<button type="submit" class="btn">SET BUDGET & CONTINUE</button>
+		</form>
+	</div>
+	<script src="../scripts/index.js" defer></script>
+</body>
+
+</html>
