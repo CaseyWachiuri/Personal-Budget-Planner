@@ -4,37 +4,96 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>SET INCOME | BUDGET PLANNER</title>
-	<link rel="stylesheet" href="../css/index.css">
+	<title>Budget Planner</title>
+	<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-	<div class="income-container">
-		<h1>SET MONTHLY BUDGET</h1>
-		<form id="income-setup-form">
-			<div class="form-group">
-				<label for="monthly-income">MONTHLY INCOME</label>
-				<input type="number" id="monthly-income" placeholder="Kshs 0.00" required>
-			</div>
-			<div class="form-group">
-				<label for="budget-goal">MONTHLY SAVINGS GOAL</label>
-				<input type="number" id="budget-goal" placeholder="Kshs 0.00" required>
+	<header>
+		<div class="header-container">
+			<h1 class="main-title">BUDGET PLANNER</h1>
+		</div>
+	</header>
+
+	<main>
+		<div class="main-div">
+			<form class="section">
+				<h2>ADD INCOME</h2>
+				<div class="input-grid">
+					<div class="input-group">
+						<input type="text" class="input-field" placeholder="DESCRIPTION (e.g. Salary)" id="income-name">
+					</div>
+					<div class="input-group">
+						<input type="number" class="input-field" placeholder="AMOUNT (0.00)" id="income-amount">
+					</div>
+				</div>
+				<button type="submit" class="add-btn" id="add-income">ADD INCOME</button>
+			</form>
+
+			<form class="section">
+				<h2>ADD EXPENSE</h2>
+				<div class="input-grid three-col">
+					<div class="input-group">
+						<input type="text" class="input-field" placeholder="DESCRIPTION (e.g. Groceries)" id="expense-name">
+					</div>
+					<div class="input-group">
+						<input type="number" class="input-field" placeholder="AMOUNT (0.00)" id="expense-amount">
+					</div>
+					<div class="input-group">
+						<input type="text" class="input-field" placeholder="CATEGORY (e.g. Food)" id="expense-category">
+					</div>
+				</div>
+				<button type="submit" class="add-btn" id="add-expense">ADD EXPENSE</button>
+			</form>
+
+			<div class="lists-container">
+				<div class="list-section">
+					<h2>INCOME LIST</h2>
+					<div id="income-list">
+						<!-- Configure adding income directly -->
+					</div>
+				</div>
+				<div class="list-section">
+					<h2>EXPENSE LIST</h2>
+					<div id="expense-list">
+						<!-- Configure adding expenses directly -->
+					</div>
+				</div>
 			</div>
 
-			<div class="form-group">
-				<label for="start-month">START MONTH</label>
-				<input type="date" id="start-month" default-value="" required>
+			<div class="totals-grid">
+				<div class="total-box">
+					<div class="total-content">
+						<span>TOTAL INCOME</span>
+						<span class="total-amount" id="total-income">Kshs 0.00</span>
+					</div>
+				</div>
+				<div class="total-box">
+					<div class="total-content">
+						<span>TOTAL EXPENSES</span>
+						<span class="total-amount" id="total-expenses">Kshs 0.00</span>
+					</div>
+				</div>
 			</div>
 
-			<div class="form-group">
-				<label for="end-month">END MONTH</label>
-				<input type="date" id="end-month" required>
+			<div class="total-box">
+				<div class="total-content">
+					<span>BALANCE</span>
+					<span class="total-amount" id="balance">Kshs 0.00</span>
+				</div>
 			</div>
 
-			<button type="submit" class="btn">SET BUDGET & CONTINUE</button>
-		</form>
-	</div>
-	<script src="../scripts/index.js" defer></script>
+			<div class="chart-section">
+				<h2>SPENDING BY CATEGORY</h2>
+				<div class="chart-container">
+					<canvas id="budgetChart" height="300"></canvas>
+				</div>
+			</div>
+		</div>
+	</main>
+
+	<script src="script.js" defer></script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </body>
 
 </html>
