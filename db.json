@@ -1,19 +1,6 @@
 {
   "expenses": [
-    {
-      "id": "59f0",
-      "Expense": "100",
-      "Type": "housing",
-      "Date": "2025-09-30"
-    }
   ],
   "income": [
-    {
-      "id": "8fb3",
-      "MonthlyAmount": "10000",
-      "Budget": "100",
-      "startDate": "2025-09-29",
-      "endDate": "2025-09-30"
-    }
   ]
 }
